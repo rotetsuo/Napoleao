@@ -1,0 +1,921 @@
+/*
+	Autor: Roberto Tetsuo
+	Data: 14/04/21
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+html {
+  scroll-behavior: smooth!important;
+}
+h1, h2, h3, h4, h5, h6, a, p{
+	font-family: 'Poppins', sans-serif!important;
+	color: #E8E8E8!important;
+}
+a, p{
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 18px;
+	color: #E8E8E8!important;
+}
+body{
+	background: #33312E!important;
+	padding-top: 120px!important;
+}
+header{
+	height: 120px;
+	display: flex;
+	align-items: center;
+	position: fixed;
+    z-index: 999;
+    width: 100%;
+    background: #33312E!important;
+    top: 0;
+}
+.headerMenu{
+	display: flex;
+	align-items: center;
+}
+.headerMenu a:hover{
+	color: #E8E8E8;
+}
+.headerMenu ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.headerMenu ul li{
+	display: inline-block;
+	margin: 0 15px;
+}
+.menuItem{
+	margin: 0 15px;
+}
+.headerMenu ul a{
+	text-decoration: none;
+}
+.btnHeaderZap{
+	width: auto;
+	height: 28px;
+	background: #D52941;
+	border-radius: 6px;
+	text-align: center;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
+	margin: 0 15px;
+}
+.btnHeaderZap img{
+	margin-right: 7px;
+}
+.socialLinkHeader{
+	margin: 0 7px;
+}
+
+/*	Footer	*/
+
+footer .headerMenu{
+	height: 170px;
+}
+footer .headerMenu li{
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 23px;
+	color: #E8E8E8!important;
+}
+.floatZap{
+	position: fixed;
+	right: 115px;
+	bottom: 120px;
+	border-radius: 50%;
+	background-color: #27AE60;
+	padding: 20px;
+}
+.floatZap img{
+	height: 56px;
+	width: 56px;
+}
+
+/*	Página Home	*/
+
+
+#sliderHome img{
+	height: 610px;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+}
+#sliderHome .slick-dots {
+    bottom: 20px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+.slick-dots li button{
+	border-radius: 50%;
+}
+#sliderHome .slick-dots li button:before {
+   color: #33312E!important;
+}
+#sliderHome .slick-dots li.slick-active button:before{
+	color: #D52941!important;
+}
+#sliderHome .slick-dots li.slick-active button{
+	background-color: #D52941!important;
+}
+
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+}
+
+.slick-dots li button:before {
+    content: '•';
+    font-size: 22px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    opacity: .25;
+    color: black;
+}
+
+.foodSuggestions{
+	padding: 22px 0;
+	height: 150px;
+}
+
+
+.foodSeparator{
+	height: 100%;
+	border-radius: 6px;
+	width: 5px;
+	background: #F9FCFD;
+	display: block;
+	position: absolute;
+	top: 0;
+}
+.foodSeparator.f1{
+	right: 25px; 
+}
+.foodSeparator.f2{
+	right: -15px;
+}
+.eachFood h2{
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 36px;
+	color: #E8E8E8;
+}
+.eachFood p{
+	font-size: 18px;
+	line-height: 20px;
+	font-weight: 500;
+}
+.foodTag,
+.normalTag{
+	background: #D52941;
+	border-radius: 6px;
+	padding: 3px 15px;
+	width: fit-content!important;
+	margin: 0;
+}
+.eachFood .foodTag{
+	font-size: 12px;
+	line-height: 18px;
+
+}
+.eachFood p.f1{
+	width: 85%;
+}
+.eachFood.f2{
+	padding-left: 80px;
+}
+.whoWeAre{
+	padding: 140px 0;
+}
+.whoWeAre img{
+	height: 550px;
+	width: 100%;
+	object-position: center;
+	object-fit: cover;
+	border-radius: 55px;
+}
+.homeTitle{
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 43px;
+	color: #E8E8E8;
+}
+.whoWeAre h2{
+	margin-top: 30px;
+}
+.whoWeAre p{
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 20px;
+	margin-bottom: 35px;
+}
+.normalTag{
+	font-size: 18px;
+	line-height: 20px;
+	margin-bottom: 0;
+}
+.seeMore{
+	background: #D52941;
+	border-radius: 4px;
+	padding: 10px 60px;
+	font-size: 24px;
+	line-height: 36px;
+	text-decoration: none;
+	margin-top: 15px;
+}
+.seeMore:hover{
+	color: #E8E8E8;
+	text-decoration: none;
+}
+.ourMenu h2{
+	margin-top: 10px;
+}
+.titleDisc{
+	font-size: 18px;
+	line-height: 20px;
+}
+.eachMenu{
+	margin-top: 70px;
+}
+.eachMenu h3{
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 38px;
+	text-align: center;
+	color: #E8E8E8;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.eachMenu p{
+	font-size: 16px;
+	line-height: 18px;
+}
+
+.ourMenu .seeMore{
+	width: 100%;
+	text-align: center;
+	display: block;
+	margin-top: 80px;
+}
+.ourLocation{
+	padding: 150px 0;
+}
+.ourLocation .foodTag{
+	font-size: 18px;
+	line-height: 20px;
+	margin-bottom: 20px;
+}
+.refillLogo{
+	width: 210px;
+	height: 70px;
+	margin: 23px 0;
+}
+.restInfo{
+	display: flex;
+	align-content: center;
+	margin: 12px 0;
+}
+.restInfo p{
+	display: inline-block;
+	margin-bottom: 0;
+	margin-left: 15px;
+	font-size: 16px;
+	line-height: 18px;
+
+}
+.restInfo img{
+	display: inline-block;
+}
+.ourLocation .seeMore{
+    display: block;
+    font-size: 18px;
+    line-height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 0;
+}
+.ourLocation iframe{
+	border-radius: 16px;
+}
+.ourBlog{
+	padding: 130px 0;
+}
+.eachBlogPost{
+	margin-top: 60px;
+}
+.eachBlogPost a:hover{
+	text-decoration: none;
+}
+.eachBlogPost img{
+	border-radius: 16px;
+	height: 265px;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+.eachBlogPost h3{
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 26px;
+	color: #E8E8E8;
+	margin: 10px 0;
+}
+.ourBlog .seeMore{
+	display: inline-block;
+	margin-top: 45px;
+}
+.homeContact{
+	padding-bottom: 110px;
+}
+.homeContact .homeTitle{
+	margin: 17px 0;
+	font-size: 35px;
+}
+.homeContact .seeMore{
+	display: block;
+	text-align: center;
+	width: 100%;
+	border-radius: 10px;
+}
+
+/*	Instagram Feed	*/
+
+
+#sb_instagram .sbi_photo{
+	border: none!important;
+	border-radius: 16px;
+}
+#sbi_load{
+	display: none;
+}
+.seeMore:hover{
+	background: #D52952;
+}
+
+/*	Hamburguer	*/
+
+
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+.line {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke:#E8E8E8;
+  stroke-width:5.5;
+  stroke-linecap:round;
+}
+.ham4 .top {
+  stroke-dasharray: 40 121;
+}
+.ham4 .bottom {
+  stroke-dasharray: 40 121;
+}
+.ham4.active .top {
+  stroke-dashoffset: -68px;
+}
+.ham4.active .bottom {
+  stroke-dashoffset: -68px;
+}
+
+
+/*	Blog	*/
+
+.bodyBlog{
+	padding: 20px 0 50px 0;
+}
+.bodyBlog h1{
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 54px;
+	color: #E8E8E8;
+	margin-bottom: 20px;
+}
+.bodyBlog img{
+	height: 265px;
+	width: 100%;
+	border-radius: 15px;
+	object-fit: cover;
+	object-position: center;
+}
+.bodyBlog h2{
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 26px;
+	color: #E8E8E8;
+}
+.bodyBlog .singlePost{
+	margin-top: 40px;
+}
+.bodyBlog a:hover{
+	text-decoration: none;
+}
+.bodyBlog .normalTag{
+	margin-top: 10px;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+/*	Single Blog	*/
+
+.headBlog{
+	height: 480px;
+	background-position: center!important;
+	background-size: cover!important;
+	background-repeat: no-repeat!important;
+	width: 100%;
+    box-shadow: inset 0 0 0 300px #1d191747;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 30px;
+}
+.headBlog h1{
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 54px;
+	color: #E8E8E8;
+}
+.headBlog h2{
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 20px;
+	color: #E8E8E8;
+}
+.blogContent{
+	padding: 50px 0;
+}
+.blogContent p{
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	color: #E8E8E8;
+	margin-bottom: 20px;
+}
+
+/*	Quem somos	*/
+
+.bodyWhoWeAre h1{
+	font-style: normal;
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 40px;
+	color: #E8E8E8;
+	padding-top: 60px;
+	padding-bottom: 20px;
+}
+.bodyWhoWeAre h2{
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 38px;
+	color: #E8E8E8;
+}
+.bodyWhoWeAre p{
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	color: #E8E8E8;
+}
+.quemSomosImagens{
+	border-radius: 16px;
+	width: 100%;
+	height: 570px;
+	object-fit: cover;
+	object-position: center;
+}
+.bodyWhoWeAre .slick-prev,
+.bodyWhoWeAre .slick-next{
+	background: #D52941!important;
+	border-radius: 6px!important;
+	color: #E8E8E8!important;
+	margin: 0 10px;
+	border: none;
+	outline: none;
+	padding: 10px 50px!important;
+}
+#slickArrowsRT{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 20px 0;
+}
+
+/*	404	*/
+
+.body404{
+	padding: 100px 0;
+}
+.body404{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+.title404 h1{
+	font-style: normal;
+	font-weight: bold;
+	font-size: 64px;
+	line-height: 89px;
+	text-align: center;
+	display: block;
+}
+.title404 h1 span{
+	color: #D52941;
+}
+.body404 h2{
+	font-style: normal;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 43px;
+	text-align: center;
+	color: #E8E8E8;
+}
+.body404 p{
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 23px;
+	text-align: center;
+	color: #E8E8E8;
+	padding: 30px 0;
+}
+.body404 a{
+	background: #D52941;
+	border-radius: 12px;
+	text-align: center;
+	padding: 15px 30px;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 23px;
+	text-align: center;
+	color: #E8E8E8;
+}
+.body404 a:hover{
+	text-decoration: none;
+}
+
+/*	Contacto	*/
+
+.ourLocation h3{
+	text-align: center;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 23px;
+	color: #E8E8E8;
+	padding: 13px 0;
+}
+
+/*	media queries	*/
+
+@media(max-width: 1200px){
+
+	/*	Header	*/
+
+	.headerMenu ul li,
+	.menuItem {
+	    margin: 0 10px;
+	}
+}
+
+@media(max-width: 1024px){
+	#sliderHome img{
+		height: 480px;
+	}
+	.homeTitle{
+		font-size: 34px;
+		line-height: 36px;
+	}
+	.eachFood.f2 {
+	    padding-left: 50px;
+	}
+	.eachFood p{
+		font-size: 16px;
+		line-height: 18px;
+	}
+	.whoWeAre img{
+		height: 450px;
+	}
+	.eachMenu.menuCenter p{
+		width: auto;
+	}
+	.whoWeAre {
+	    padding: 140px 0px 80px 0;
+	}
+	.eachMenu {
+		margin-top: 35px;
+	}
+	.ourMenu .seeMore{
+		margin-top: 50px;
+	}
+	.ourLocation {
+	    padding: 80px 0;
+	}
+	.ourBlog {
+	    padding: 70px 0;
+	}
+	.eachBlogPost img{
+		height: 185px;
+	}
+}
+
+@media(max-width: 992px){
+
+	/*	Header	*/
+
+	header{
+		height: 90px;
+	}
+	.btnHeaderZap img{
+		margin: 0;
+	}
+	.btnHeaderZap{
+		width: auto;
+		margin: 0 5px;
+	}
+
+	/*	Quem Somos	*/
+
+	#slickQuemSomos{
+		padding-top: 50px;
+	}
+
+	/*	Zap	*/
+
+	.floatZap{
+		padding: 14px;
+		right: 15px;
+	}
+	.floatZap img {
+	    height: 38px;
+	    width: 38px;
+	}
+}
+
+@media(max-width: 768px){
+
+	/*	Header	*/
+
+	header{
+		top: 0;
+	}
+	header .headerMenu{
+		justify-content: center;
+	}
+	header,
+	.collapseMenu{
+		position: fixed;
+		width: 100%;
+		z-index: 99;
+		background: #33312E;
+		min-height: 90px;
+		height: auto;
+	}
+	.headerBtnMobile{
+		border: none;
+		background: transparent;
+	}
+	.headerBtnMobile:focus {
+    border: none;
+    outline: none;
+	}
+	.collapseMenu{
+		height: 50px;
+		top: 135px;
+	}
+	.menuMobile ul{
+		list-style-type: none;
+		padding: 0;
+	}
+	.menuMobile li{
+		padding: 7px 0;
+	}
+	.menuMobile a{
+		font-size: 16px;
+		line-height: 18px;
+	}
+	.btnHeaderZap{
+		height: 30px;
+		justify-content: center;
+		margin-bottom: 15px;
+	}
+	.menuMobile{
+		padding-bottom: 30px;
+	}
+	.btnHeaderZap img{
+		margin-right: 10px;
+	}
+
+	/*	Blog	*/
+
+	.bodyBlog img{
+		height: 180px;
+	}
+	.bodyBlog h2{
+		font-size: 18px;
+		line-height: 20px;
+	}
+	.bodyBlog .normalTag{
+		margin: 10px 0;
+	}
+	.bodyBlog .singlePost {
+	    margin-top: 20px;
+	}
+
+	/*	Single Blog	*/
+
+	.headBlog{
+		height: 360px;
+	}
+	.headBlog h1{
+		font-size: 30px;
+		line-height: 34px;
+	}
+
+	/*	Contacto	*/
+
+	.ourLocation iframe{
+		margin-top: 20px;
+	}
+}
+
+@media(max-width: 767px){
+	
+	/*	Header	*/
+
+	body{
+		padding-top: 90px!important;
+	}
+
+	/*	Home	*/
+
+	#sliderHome .slick-dots {
+	    bottom: 140px;
+	}
+	.eachFood{
+		text-align: center;
+		padding: 0!important;
+		padding-top: 20px!important;
+	}
+	.eachFood p,
+	.eachFood h2{
+		width: 100%!important;
+		font-weight: bold;
+	}
+	.eachFood .foodTag{
+		margin: auto;
+		margin-bottom: 10px;
+		width: fit-content!important;
+	}
+	.foodSeparator,
+	.foodSuggestions {
+		display: none;
+	}
+	#sliderHome .carousel-indicators{
+		bottom: 130px;
+	}
+	.whoWeAre {
+	    padding: 60px 0px 80px 0;
+	}
+	.seeMore{
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin-top: 15px;
+		padding: 10px 0;
+	}
+	.normalTag{
+		margin: auto;
+		margin-bottom: 10px!important;
+	}
+	.whoWeAre p{
+		font-size: 15px;
+		line-height: 17px;
+		text-align: center;
+	}
+	.whoWeAre img {
+	    height: 350px;
+	    margin: 15px 0;
+	}
+	.whoWeAre h2 {
+	    margin-top: 15px;
+	}
+	.ourLocation .refillLogo{
+		display: none;
+	}
+	.ourLocation .normalTag{
+		margin: unset;
+		margin-bottom: 15px;
+	}
+	.eachBlogPost {
+	    margin-top: 25px;
+	}
+	.ourMenu h2 {
+	    margin-top: 19px;
+	    margin: 25px 0;
+	}
+	.eachMenu h3{
+		margin-bottom: 5px;
+	}
+}
+
+@media(max-width: 576px){
+
+	/*	Home	*/
+
+	#sliderHome img {
+	    height: 390px;
+	}
+	#sliderHome .carousel-indicators {
+	    bottom: 150px;
+	}
+
+	/*	Blog	*/
+
+	.bodyBlog img {
+	    height: 245px;
+	}
+	.bodyBlog h2{
+		font-size: 22px;
+		line-height: 24px;
+	}
+
+	/*	Quem Somos	*/
+
+	.quemSomosImagens{
+		height: 380px;
+	}
+
+
+}
+
+@media(max-width: 425px){
+
+	/*	Header	*/
+
+	header{
+		min-height: 45px;
+	}
+	body{
+		padding-top: 58px!important;
+	}
+	.ham{
+		height: 50px;
+	}
+	header .siteLogo{
+	    height: 30px;
+    	width: 100px;
+	}
+}
+
+@media(max-width: 375px){
+	#sliderHome .slick-dots {
+    	bottom: 150px;
+	}
+}
