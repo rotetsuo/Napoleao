@@ -1,6 +1,6 @@
 <?php
 	/**
-	 *	Template name: Página Contacto
+	 *	Template name: Página Contato
 	 * @package WordPress
 	 * @author Roberto Tetsuo
 	 * @subpackage Twenty_Twenty_One
@@ -8,36 +8,25 @@
 	 */
 
 	get_header();
+	 $imagemDestaque = wp_get_attachment_url( get_post_thumbnail_id());
 ?>
 
-
-<section class="ourLocation">
+<section class="bannerTopo d-block d-md-none" style="background-image: url('<?php echo $imagemDestaque; ?>');"></section>
+<section class="bodyContato">
 	<div class="container">
 		<div class="row">
-			<div class="col-12 col-md-4 col-lg-3">
-				<p class="normalTag"><?php the_title(); ?></p>
-				<img class="refillLogo" src="<?php bloginfo('template_url'); ?>/assets/images/logoRefill.svg">
-				<div class="restInfo">
-					<img src="<?php bloginfo('template_url'); ?>/assets/images/pinIcon.svg">
-					<p><?php the_field('endereco', 5); ?></p>
-				</div>
-				<div class="restInfo">
-					<img src="<?php bloginfo('template_url'); ?>/assets/images/clockIcon.svg">
-					<p><?php the_field('horario', 5); ?></p>
-				</div>
-				<div class="restInfo">
-					<img src="<?php bloginfo('template_url'); ?>/assets/images/phoneIcon.svg">
-					<p><?php the_field('telefone', 5); ?></p>
-				</div>
-				<a href="https://api.whatsapp.com/send?phone=<?php the_field('numero_whatsapp', 5); ?>&text=Bien+venidos+a+Refill" class="seeMore" target="_blank">haga tu pedido</a>
-				<h3>ou</h3>
-				<a href="<?php the_field('arquivo_menu', 5); ?>" class="seeMore" target="_blank">Acceda al menú completo</a>
+			<div class="col-12 col-md-5 d-none d-md-block">
+				<img src="<?php the_field('imagem_contato'); ?>">
 			</div>
-			<div class="col-12 col-md-8 col-lg-6 offset-lg-1">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d336.3420368430417!2d-63.171660104791165!3d-17.754777340528364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e7c6fcfa6aab%3A0xf70e06b974619f1b!2sRefill!5e0!3m2!1spt-BR!2sbr!4v1618448710499!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-			</div>
-			<div class="col-12 d-md-none">
-				
+			<div class="col-12 col-md-5 offset-md-1  talkToMe">
+				<h1>Converse comigo</h1>
+				<div class="sublinhado"></div>
+				<form>
+					<input type="text" name="name" placeholder="Nome">
+					<input type="text" name="email" placeholder="E-mail">
+					<input type="textarea" name="mensagem" placeholder="Mensagem">
+					<input type="submit" value="Enviar mensagem">
+				</form>
 			</div>
 		</div>
 	</div>
