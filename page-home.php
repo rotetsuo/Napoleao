@@ -9,227 +9,187 @@
 
 	get_header();
 ?>
+	<section class="bannerHome" style="background-image: url(<?php the_field('imagem_banner'); ?>);">
+		<div class="container">
+			<div class="row">
+				<div class="col-8 col-md-7 col-lg-5">
+					<h1><?php the_field('titulo_banner'); ?></h1>
+				</div>
+				<div class=" col-4 col-md-5 col-lg-7">
+				</div>
+				<div class="col-7 col-md-4">
+					<a class="btnNapoleao" href="<?php the_field('link_botao'); ?>"><?php the_field('texto_botao'); ?></a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="motivacao">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 text-center">
+					<h2><?php the_field('titulo_motivacao'); ?></h2>
+				</div>
+			</div>
+			<div id="sliderMotivacao" class="row">
+				<div class="col-12 col-md-4">
+					<a href="<?php the_field('link_motivacao_1'); ?>">
+						<div class="cardMotivacao">
+							<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M5.66894 63.6338C6.15693 64.1216 6.94842 64.1219 7.43679 63.6338L19.5434 51.5273C21.1862 49.883 21.4433 47.3693 20.3145 45.4523L24.3708 41.396C28.438 45.0611 33.7803 47.3493 39.6697 47.4933C43.9473 47.597 48.1633 46.5493 51.8665 44.4683C52.4684 44.1301 52.6821 43.3681 52.3439 42.7662C52.0057 42.1645 51.2435 41.9507 50.6419 42.2888C47.3268 44.1517 43.5551 45.0868 39.7306 44.9939C28.0172 44.7074 18.7196 34.945 19.0048 23.2318C19.2871 11.6935 28.7635 2.4996 40.2424 2.4996C52.1626 2.4996 61.783 12.3448 61.4926 24.2681C61.3994 28.0802 60.287 31.7936 58.2761 35.0069C57.9098 35.5922 58.0873 36.3634 58.6724 36.7296C59.2578 37.0959 60.0289 36.9184 60.3952 36.3333C62.6439 32.7402 63.8876 28.5892 63.9919 24.3293C64.3161 11.0136 53.5751 0 40.2417 0C27.4134 0 16.8211 10.2761 16.5056 23.1712C16.3521 29.4758 18.6833 35.2742 22.6031 39.6281L18.5467 43.6846C16.6301 42.556 14.116 42.8131 12.4712 44.4562L0.365114 56.5623C-0.123007 57.0504 -0.123007 57.8419 0.365114 58.3301L5.66894 63.6338ZM14.2387 46.2244C15.2138 45.2503 16.8003 45.2502 17.7747 46.2237C18.7489 47.1987 18.7489 48.7853 17.7751 49.7599L6.5528 60.9822L3.01696 57.4462L14.2387 46.2244Z" fill="#065AA2"/>
+								<path d="M55.7494 41.2493C56.4398 41.2493 56.9994 40.6896 56.9994 39.9993C56.9994 39.3089 56.4398 38.7493 55.7494 38.7493C55.0591 38.7493 54.4994 39.3089 54.4994 39.9993C54.4994 40.6896 55.0591 41.2493 55.7494 41.2493Z" fill="#065AA2"/>
+							</svg>
+							<h3><?php the_field('motivacao_1'); ?></h3>
+						</div>
+					</a>
+				</div>
+				<div class="col-12 col-md-4">
+					<a href="<?php the_field('link_motivacao_2'); ?>">
+						<div class="cardMotivacao">
+							<svg width="72" height="64" viewBox="0 0 72 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M31.7812 64H40.2188C43.3204 64 45.8438 61.5034 45.8438 58.4348V54.2609C45.8438 48.2161 48.7747 44.47 51.8777 40.5038C55.1334 36.3424 58.5 32.0394 58.5 25.0435C58.5 21.5066 57.6402 17.9859 56.0136 14.8621C55.658 14.1792 54.8099 13.9105 54.1195 14.2624C53.4291 14.6143 53.1578 15.4534 53.5134 16.1365C54.956 18.907 55.6875 21.9037 55.6875 25.0435C55.6875 31.0883 52.7566 34.8344 49.6536 38.8006C46.6194 42.6787 43.4905 46.6808 43.0782 52.8696H28.9216C28.5095 46.6808 25.3804 42.6787 22.3463 38.8006C19.2434 34.8344 16.3125 31.0883 16.3125 25.0435C16.3125 14.3032 25.1443 5.56522 36 5.56522C39.2576 5.56522 42.4842 6.36828 45.3312 7.88758C46.0149 8.25266 46.8678 8 47.2365 7.32355C47.6052 6.64737 47.35 5.80327 46.6664 5.43861C43.4105 3.70101 39.7221 2.78261 36 2.78261C23.5935 2.78261 13.5 12.7687 13.5 25.0435C13.5 32.0394 16.8666 36.3424 20.1223 40.5038C23.2253 44.47 26.1562 48.2159 26.1562 54.2609V58.4348C26.1562 61.5033 28.6796 64 31.7812 64ZM28.9688 55.6522H43.0312V58.4348C43.0312 59.9691 41.7696 61.2174 40.2188 61.2174H31.7812C30.2304 61.2174 28.9688 59.9691 28.9688 58.4348V55.6522Z" fill="#065AA2"/>
+								<path d="M70.5938 23.6522H65.5312C64.7546 23.6522 64.125 24.2752 64.125 25.0435C64.125 25.8118 64.7546 26.4348 65.5312 26.4348H70.5938C71.3704 26.4348 72 25.8118 72 25.0435C72 24.2752 71.3704 23.6522 70.5938 23.6522Z" fill="#065AA2"/>
+								<path d="M1.40625 23.6522C0.629578 23.6522 0 24.2752 0 25.0435C0 25.8118 0.629578 26.4348 1.40625 26.4348H6.46875C7.24542 26.4348 7.875 25.8118 7.875 25.0435C7.875 24.2752 7.24542 23.6522 6.46875 23.6522H1.40625Z" fill="#065AA2"/>
+								<path d="M60.9006 0.407374C60.3515 -0.135791 59.461 -0.135791 58.9118 0.407374L55.8869 3.40007C55.3378 3.94337 55.3378 4.82435 55.8869 5.36779C56.4362 5.9111 57.3265 5.9111 57.8758 5.36779L60.9006 2.3751C61.4498 1.83179 61.4498 0.950817 60.9006 0.407374Z" fill="#065AA2"/>
+								<path d="M13.1289 49.6391L16.113 46.6867C16.6621 46.1434 16.6621 45.2625 16.113 44.719C15.5638 44.1759 14.6734 44.1759 14.1241 44.719L11.1401 47.6714C10.5909 48.2147 10.5909 49.0957 11.1401 49.6391C11.6895 50.1824 12.5798 50.1824 13.1289 49.6391Z" fill="#065AA2"/>
+								<path d="M16.113 5.36779C16.6621 4.82449 16.6621 3.94351 16.113 3.40007L13.0882 0.407374C12.539 -0.135791 11.6486 -0.135791 11.0993 0.407374C10.5501 0.950678 10.5501 1.83165 11.0993 2.3751L14.1241 5.36779C14.6736 5.9111 15.5639 5.91096 16.113 5.36779Z" fill="#065AA2"/>
+								<path d="M58.8711 49.6391C59.4204 50.1824 60.3107 50.1824 60.86 49.6391C61.4091 49.0958 61.4091 48.2148 60.86 47.6714L57.8759 44.719C57.3268 44.1759 56.4363 44.1759 55.8871 44.719C55.3379 45.2623 55.3379 46.1433 55.8871 46.6867L58.8711 49.6391Z" fill="#065AA2"/>
+								<path d="M51.0469 11.8261C51.8235 11.8261 52.4531 11.2032 52.4531 10.4348C52.4531 9.66639 51.8235 9.04348 51.0469 9.04348C50.2702 9.04348 49.6406 9.66639 49.6406 10.4348C49.6406 11.2032 50.2702 11.8261 51.0469 11.8261Z" fill="#065AA2"/>
+							</svg>
+							<h3><?php the_field('motivacao_2'); ?></h3>
+						</div>
+					</a>
+				</div>
+				<div class="col-12 col-md-4">
+					<a href="<?php the_field('link_motivacao_3'); ?>">
+						<div class="cardMotivacao">
+							<svg width="70" height="88" viewBox="0 0 70 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M13.0057 28.5312V36.4511C11.3035 37.0533 9.9018 38.3199 9.1139 40.0321L5.77042 47.3148C3.61414 52.0152 4.65548 57.5697 8.3622 61.1363L18.0813 70.4847V86.2812C18.0813 87.2305 18.8389 88 19.7732 88H27.3866C28.3208 88 29.0785 87.2305 29.0785 86.2812C29.0785 85.332 28.3208 84.5625 27.3866 84.5625H21.465V69.7452C21.465 69.273 21.2739 68.8217 20.9363 68.4972L10.689 58.6403C8.04125 56.0926 7.29717 52.1247 8.83744 48.7673L12.1799 41.4865C12.9912 39.7238 15.0185 39.0352 16.6777 39.8222L33.391 47.7388C31.0486 50.9523 26.7203 52.1656 23.0177 50.4123L18.4175 48.2329C17.5705 47.8314 16.5639 48.2041 16.1692 49.0641C15.7741 49.9244 16.1406 50.947 16.9873 51.3483L21.5877 53.5279C23.4735 54.421 25.5922 54.8185 27.7805 54.5904C31.3505 58.5087 33.3081 63.5721 33.3081 68.9425C33.3081 69.8918 34.0658 70.6612 35 70.6612C35.9342 70.6612 36.6919 69.8918 36.6919 68.9425C36.6919 63.2995 34.8323 57.9482 31.4102 53.6073C33.9299 52.4686 36.0725 50.4389 37.3267 47.7068C37.3273 47.7055 37.3277 47.7041 37.3284 47.7027C38.1687 48.0834 39.0977 48.2969 40.0756 48.2969C41.5861 48.2969 42.9826 47.7912 44.1099 46.938C45.1964 49.2632 47.5295 50.875 50.2268 50.875C51.2688 50.875 52.2564 50.634 53.1389 50.2049C52.6722 53.2904 51.9163 56.1038 51.1326 59.0153C49.8556 63.76 48.535 68.6661 48.535 74.9375V84.5625H42.6134C41.6792 84.5625 40.9215 85.332 40.9215 86.2812C40.9215 87.2305 41.6792 88 42.6134 88H50.2268C51.1611 88 51.9187 87.2305 51.9187 86.2812V74.9375C51.9187 69.1278 53.1223 64.6561 54.3966 59.9222C55.6736 55.1775 56.9943 50.2714 56.9943 44V33.6875C56.9943 29.8966 53.9584 26.8125 50.2268 26.8125C48.7163 26.8125 47.3199 27.3182 46.1926 28.1713C45.106 25.8462 42.773 24.2344 40.0756 24.2344C38.5651 24.2344 37.1686 24.74 36.0413 25.5932C34.9548 23.2681 32.6217 21.6562 29.9244 21.6562C27.9046 21.6562 26.0898 22.561 24.8488 23.9912C23.6078 22.561 21.7929 21.6562 19.7732 21.6562C16.0416 21.6562 13.0057 24.7404 13.0057 28.5312ZM46.8431 33.6875C46.8431 31.7921 48.361 30.25 50.2268 30.25C52.0926 30.25 53.6106 31.7921 53.6106 33.6875V44C53.6106 45.8954 52.0926 47.4375 50.2268 47.4375C48.361 47.4375 46.8431 45.8954 46.8431 44V33.6875ZM36.6919 31.1094C36.6919 29.2139 38.2098 27.6719 40.0756 27.6719C41.9414 27.6719 43.4593 29.2139 43.4593 31.1094V41.4219C43.4593 43.3173 41.9414 44.8594 40.0756 44.8594C38.2098 44.8594 36.6919 43.3173 36.6919 41.4219V31.1094ZM26.5407 28.5312C26.5407 26.6358 28.0586 25.0938 29.9244 25.0938C31.7902 25.0938 33.3081 26.6358 33.3081 28.5312V41.4219C33.3081 42.4009 33.512 43.3321 33.8768 44.176L26.5407 40.7012V28.5312ZM16.3894 28.5312C16.3894 26.6358 17.9074 25.0938 19.7732 25.0938C21.639 25.0938 23.1569 26.6358 23.1569 28.5312V39.0985L18.1085 36.7073C17.559 36.4466 16.9806 36.2644 16.3894 36.1613V28.5312Z" fill="#065AA2"/>
+								<path d="M36.6919 7.90625V1.71875C36.6919 0.769484 35.9342 0 35 0C34.0658 0 33.3081 0.769484 33.3081 1.71875V7.90625C33.3081 8.85552 34.0658 9.625 35 9.625C35.9342 9.625 36.6919 8.85552 36.6919 7.90625Z" fill="#065AA2"/>
+								<path d="M20.6189 13.5405C21.4282 13.0659 21.7056 12.0149 21.2385 11.1927L18.7007 6.72564C18.2336 5.90339 17.1988 5.62152 16.3896 6.09606C15.5804 6.57061 15.3029 7.62162 15.77 8.44387L18.3078 12.9109C18.7735 13.7306 19.8075 14.0164 20.6189 13.5405Z" fill="#065AA2"/>
+								<path d="M6.93511 21.8864L2.53794 19.3083C1.72787 18.8335 0.693633 19.1156 0.226846 19.9378C-0.240279 20.7599 0.0371872 21.8111 0.846408 22.2857L5.24358 24.8638C6.04941 25.3361 7.08568 25.0601 7.55467 24.2342C8.02179 23.412 7.74433 22.3609 6.93511 21.8864Z" fill="#065AA2"/>
+								<path d="M51.6922 12.9111L54.23 8.44405C54.6971 7.62197 54.4196 6.57078 53.6104 6.09623C52.8005 5.62152 51.7664 5.90373 51.2993 6.72581L48.7615 11.1928C48.2944 12.0149 48.5718 13.0661 49.3811 13.5407C50.1871 14.0128 51.223 13.7368 51.6922 12.9111Z" fill="#065AA2"/>
+								<path d="M64.7564 24.8636L69.1536 22.2855C69.9628 21.8109 70.2403 20.7599 69.7732 19.9377C69.3059 19.1156 68.2714 18.8334 67.4621 19.3081L63.0649 21.8862C62.2557 22.3608 61.9782 23.4118 62.4453 24.234C62.9109 25.0537 63.945 25.3395 64.7564 24.8636Z" fill="#065AA2"/>
+								<path d="M35 88C35.9344 88 36.6919 87.2305 36.6919 86.2812C36.6919 85.332 35.9344 84.5625 35 84.5625C34.0656 84.5625 33.3081 85.332 33.3081 86.2812C33.3081 87.2305 34.0656 88 35 88Z" fill="#065AA2"/>
+							</svg>
+							<h3><?php the_field('motivacao_3'); ?></h3>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="whoIAm">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-6 personalText">
+					<h2 class="secondTitle"><?php the_field('titulo_quem_sou'); ?></h2>
+					<p>
+						<?php the_field('texto_quem_sou'); ?>
+					</p>
+					<div id="imagemMobile"></div>
+					<a href="#" id="btnQuemSou" class="btnNapoleao">Veja mais</a>
+				</div>
+				<div class="col-12 col-md-5 offset-md-1">
+					<img class="imgWhoIAm" src="<?php the_field('foto_quem_sou'); ?>">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="lastPosts">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="secondTitle">Últimos posts</h2>
+				</div>
+			</div>
+			<div class="row" id="sliderPosts">
+			<?php
+ 				$args = array(
+				    'post_type' => 'post',
+				  	'posts_per_page' => 8
+				);
+				// The Query
+				$the_query = new WP_Query( $args );
+				 
+				// The Loop
+				if ( $the_query->have_posts() ) {
+				    
+				    while ( $the_query->have_posts() ) {
+				        $the_query->the_post();
+				        $imagemDestaque = wp_get_attachment_url( get_post_thumbnail_id());
+				        $post_date = get_the_date( 'd/m/y' );
 
-<section id="sliderHome">
-    <div id="ca1">
-        <img src="<?php the_field('foto_1'); ?>">
-    </div>
-    <div id="ca2">
-        <img src="<?php the_field('foto_2'); ?>">
-    </div>
-    <div id="ca3">
-        <img src="<?php the_field('foto_3'); ?>">
-</section>
-<section class="foodSuggestions">
-	<div class="container">
-		<div class="row">
-			<div id="food1" class="col-12 col-md-4 eachFood">
-				<p class="foodTag"><?php the_field('tipo_foto_1'); ?></p>
-				<h2><?php the_field('titulo_foto_1'); ?></h2>
-				<p class="f1"><?php the_field('descricao_foto_1'); ?></p>
-				<span class="foodSeparator f1"></span>
-			</div>
-			<div id="food2" class="col-12 col-md-4 text-center eachFood">
-				<p class="m-auto foodTag"><?php the_field('tipo_foto_2'); ?></p>
-				<h2><?php the_field('titulo_foto_2'); ?></h2>
-				<p><?php the_field('descricao_foto_2'); ?></p>
-				<span class="foodSeparator f2"></span>
-			</div>
-			<div id="food3" class="col-12 col-md-4 eachFood f2">				
-				<p class="foodTag"><?php the_field('tipo_foto_3'); ?></p>
-				<h2><?php the_field('titulo_foto_3'); ?></h2>
-				<p><?php the_field('descricao_foto_3'); ?></p>	
-			</div>
-		</div>
-	</div>
-</section>
-<section class="whoWeAre">
-	<div class="container">
-		<div class="row">
-			<div class="col-12 text-center d-md-none">
-				
-			</div>
-			<div class="col-12 col-md-6 col-lg-7">
-				<img src="<?php the_field('foto_quienes_somos'); ?>">
-			</div>
-			<div class="col-12 col-md-6 col-lg-4 offset-lg-1">
-				<p class="normalTag">Quiénes somos</p>
-				<h2 class="homeTitle"><?php the_field('titulo_quienes_somos'); ?></h2>
-				<p class="titleDisc">
-					<?php the_field('texto_quienes_somos'); ?>
-				</p>
-				<a href="/quienes-somos" class="seeMore">Lea más</a>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="ourMenu">
-	<div class="container">
-		<div class="row">
-			<div class="col-12 text-center">
-				<p class="normalTag m-auto">menú</p>
-				<h2 class="homeTitle"><?php the_field('titulo_menu'); ?></h2>
-			</div>
-			<div class="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-3 text-center">
-				<p class="titleDisc">
-					<?php the_field('titulo_menu'); ?>
-			</div>
-			<div class="col-12 col-md-4 col-lg-4  text-center eachMenu">
-				<img src="<?php bloginfo('template_url'); ?>/assets/images/sushiIcon.svg">
-				<h3><?php the_field('titulo_sushi'); ?></h3>
-				<p class="titleDisc">
-					<?php the_field('descricao_sushi'); ?>
-				</p>
-			</div>
-			<div class="col-12 col-md-4 col-lg-4 text-center eachMenu menuCenter">
-				<img src="<?php bloginfo('template_url'); ?>/assets/images/hamburguerIcon.svg">			
-				<h3><?php the_field('titulo_hamburguesa'); ?></h3>	
-				<p class="titleDisc">
-					<?php the_field('descricao_hamburguesa'); ?>
-				</p>
-			</div>
-			<div class="col-12 col-md-4 col-lg-4 text-center eachMenu">
-				<img src="<?php bloginfo('template_url'); ?>/assets/images/alitaIcon.svg">
-				<h3><?php the_field('titulo_alitas'); ?></h3>
-				<p class="titleDisc">
-					<?php the_field('descricao_alitas'); ?>
-				</p>
-			</div>
-			<div class="col-12">
-				<a href="<?php the_field('arquivo_menu'); ?>" class="seeMore" target="_blank">Acceda al menú completo</a>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="ourLocation">
-	<div class="container">
-		<div class="row">
-			<div class="col-12 col-md-4 col-lg-3 offset-lg-1">
-				<p class="normalTag">Donde estamos</p>
-				<img class="refillLogo" src="<?php bloginfo('template_url'); ?>/assets/images/logoRefill.svg">
-				<div class="restInfo">
-					<img src="<?php bloginfo('template_url'); ?>/assets/images/pinIcon.svg">
-					<p><?php the_field('endereco'); ?></p>
+			?>
+				<div class="col-12 col-md-6 col-lg-3 eachPost">
+					<a href="<?php the_permalink(); ?>">
+						<img src="<?php echo $imagemDestaque; ?>">
+						<h4><?php the_title(); ?></h4>
+						<p><?php echo $post_date; ?></p>
+					</a>
 				</div>
-				<div class="restInfo">
-					<img src="<?php bloginfo('template_url'); ?>/assets/images/clockIcon.svg">
-					<p><?php the_field('horario'); ?></p>
-				</div>
-				<div class="restInfo">
-					<img src="<?php bloginfo('template_url'); ?>/assets/images/phoneIcon.svg">
-					<p><?php the_field('telefone'); ?></p>
-				</div>
-				<a href="https://api.whatsapp.com/send?phone=<?php the_field('numero_whatsapp'); ?>&text=Bien+venidos+a+Refill" class="seeMore" target="_blank">haga tu pedido</a>
-			</div>
-			<div class="col-12 col-md-8 col-lg-6 offset-lg-1">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d336.3420368430417!2d-63.171660104791165!3d-17.754777340528364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e7c6fcfa6aab%3A0xf70e06b974619f1b!2sRefill!5e0!3m2!1spt-BR!2sbr!4v1618448710499!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-			</div>
-			<div class="col-12 d-md-none">
-				
-			</div>
-		</div>
-	</div>
-</section>
-<section class="ourInstagram">
-	<div class="container">
-		<div class="row">
-			<div class="col-12 text-center">
-				<h2 class="homeTitle">Nuestro Instagram</h2>
-			</div>
-			<div class="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-3 text-center">
-			</div>
-			<div class="col-12">
-				<?php
-					echo do_shortcode('[instagram-feed]');
+			<?php
+				    }
+				} else {
+				    // no posts found
+				}
+				/* Restore original Post Data */
+				wp_reset_postdata();
 				?>
 			</div>
-			<div class="col-12 text-center">
-				<a href="<?php the_field('link_instagram'); ?>" class="seeMore" target="_blank">ver más</a>
+		</div>
+	</section>
+	<section class="talkToMe">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-6 col-xl-5">
+					<img class="d-none d-md-block" src="<?php bloginfo('template_url'); ?>/assets/images/napoelao3.png">
+				</div>
+				<div class="col-12 col-md-5 offset-md-1 offset-xl-2 formContato">
+					<h2>Converse comigo</h2>
+					<div class="sublinhado"></div>
+					<form>
+						<input type="text" name="name" placeholder="Nome">
+						<input type="text" name="email" placeholder="E-mail">
+						<input type="textarea" name="mensagem" placeholder="Mensagem">
+						<input type="submit" value="Enviar mensagem">
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>	
-</section>
-<section class="ourBlog">
-	<div class="container">
-		<div class="row">
-			<div class="col-12 text-center">
-				<h2 class="homeTitle">Nuestro Blog</h2>
-			</div>
+	</section>
 
 
-            <?php
-	            // The Query
-	            $args = array(
-	              'post_type' => 'post',
-	              'orderby' => 'date',
-	              'posts_per_page' => 3
-	            );
-            	$the_query = new WP_Query( $args );
-             	// The Loop
-            	if ( $the_query->have_posts() ) {
-              		while ( $the_query->have_posts() ) { $the_query->the_post(); 
-                		if(has_post_thumbnail()) {
-                  			$imagemDestaque = wp_get_attachment_url( get_post_thumbnail_id());
-                		} else {
-                  			$imagemDestaque = get_template_directory_uri()."/assets/images/imgPadrao.jpg";
-                		}
-			?>
-			<div class="col-12 col-md-4 eachBlogPost">
-				<a href="<?php the_permalink(); ?>">
-					<img src="<?php echo $imagemDestaque; ?>">
-					<h3><?php the_title(); ?></h3>
-					<p class="foodTag"><?php echo get_the_date('d/m/y'); ?></p>
-				</a>
-			</div>
-			<?php
-					}
-				}
-			?>
-		</div>
-	</div>
-</section>
-<section class="homeContact">
-	<div class="container">
-		<div class="row">
-			<div class="col-12 text-center">
-				<p class="normalTag m-auto">Contacto</p>
-			</div>
-			<div class="col-12 col-md-8 offset-md-2 text-center">
-				<h2 class="homeTitle">
-					Envía un mensaje por WhatsApp y haga tu pedido
-				</h2>
-			</div>
-			<div class="col-12 col-md-6 offset-md-3 text-center">
-				<a href="https://api.whatsapp.com/send?phone=<?php the_field('numero_whatsapp'); ?>&text=Bien+venidos+a+Refill" class="seeMore" target="_blank">Quiero hacer mi pedido</a>
-			</div>
-		</div>
-	</div>
-</section>
-<script type="text/javascript">
-	
-	$(document).ready(function(){
+	<script type="text/javascript">
 
-		$('#sliderHome').slick({
-			dots: true,
-			infinite: true,
-			speed: 500,
-			fade: true,
-			arrows: false,
-			cssEase: 'linear'
+		$(document).ready(function(){
+			var width = $(window).width();
+			if(width < 768){
+				$('#sliderMotivacao').slick({
+					infinite: true,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					infinite: true,
+					arrows: false,
+					autoplay: true,
+					autoplaySpeed: 2000,
+				});
+				$('#sliderPosts').slick({
+					infinite: true,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					infinite: true,
+					arrows: false,
+					autoplay: true,
+					autoplaySpeed: 2000,
+				});
+				$(".whoIAm img").appendTo("#imagemMobile");
+			}
+
 		});
-
-		if($(window).width() < 768){
-			$("#food1").appendTo("#slick-slide00");
-			$("#food2").appendTo("#slick-slide01");
-			$("#food3").appendTo("#slick-slide02");
-			$(".whoWeAre .normalTag").appendTo(".whoWeAre .d-md-none");
-			$(".whoWeAre .homeTitle").appendTo(".whoWeAre .d-md-none");
-			$(".ourLocation .seeMore").appendTo(".ourLocation .d-md-none");
-			
-		}
-	});
-</script>
-
+		
+		
+	
+	</script>
 
 <?php
 	get_footer();

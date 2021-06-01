@@ -627,3 +627,8 @@ function twentytwentyone_add_ie_class() {
 	<?php
 }
 add_action( 'wp_footer', 'twentytwentyone_add_ie_class' );
+
+function register_my_menu() {
+  register_nav_menu( 'primary', __( 'Primary Menu', 'twentytwentyone' ) );
+}
+add_action( 'after_setup_theme', 'register_my_menu' );

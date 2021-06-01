@@ -12,44 +12,37 @@
  */
 
 ?>
-		<footer id="horarios">
-			<div class="container">
-				<a class="floatZap" href="https://api.whatsapp.com/send?phone=<?php the_field('numero_whatsapp', 5); ?>&text=Bien+venidos+a+Refill" target="_blank">
-					<img src="<?php bloginfo('template_url'); ?>/assets/images/floatZap.svg">
-				</a>
-				<div class="row">
-					<div class="col-12 col-md-3 headerMenu">
-						<a href="<?php echo get_home_url(); ?>">
-							<img src="<?php bloginfo('template_url'); ?>/assets/images/logoRefill.svg">
-						</a>
-					</div>
-					<div class="col-12 col-md-7 headerMenu">
-						<ul>
-							<li>
-								<?php the_field('endereco', 5); ?>
-							</li>
-							<li>
-								<?php the_field('horario', 5); ?>
-							</li>
-						
-						</ul>
-					</div>
-					<div class="col-12 col-md-2 headerMenu">
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-3">
+					<a href="<?php echo get_home_url(); ?>" class="footerTitle"> 
+						Napoleão Bernardes
+					</a>
+				</div>
+				<div class="col-12 offset-md-2 col-md-7 socialFooter">
+					<?php
+						// check if the repeater field has rows of data
+						if( have_rows('redes_socias', 5) ):
 
-						<a href="<?php the_field('link_facebook', 5); ?>" class="socialLinkHeader" target="_blank">
-							<img src="<?php bloginfo('template_url'); ?>/assets/images/redFbLogo.svg">
-						</a>
-						<a href="<?php the_field('link_instagram', 5); ?>" class="socialLinkHeader" target="_blank">
-							<img src="<?php bloginfo('template_url'); ?>/assets/images/redIgLogo.svg">
-						</a>
-						<a href="https://api.whatsapp.com/send?phone=<?php the_field('numero_whatsapp', 5); ?>&text=Bien+venidos+a+Refill" class="socialLinkHeader" target="_blank">
-							<img src="<?php bloginfo('template_url'); ?>/assets/images/redZapLogo.svg">
-						</a>
-					</div>
+						 	// loop through the rows of data
+						    while ( have_rows('redes_socias', 5) ) : the_row();
+					?>
+					<a href="<?php the_sub_field('link_rede_social', 5); ?>" target="_blank">
+						<img src="<?php the_sub_field('icone_rede_social', 5) ?>">
+					</a>
+					<?php 
+						 endwhile;
+
+						else :
+					    // no rows found
+						endif;
+					?>
 					
 				</div>
 			</div>
-		</footer>
+		</div>
+	</footer>
 
 <?php wp_footer(); ?>
 

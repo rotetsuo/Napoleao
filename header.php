@@ -27,94 +27,68 @@
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
+	<link rel="stylesheet" href="https://use.typekit.net/lkz0zjh.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 	<header>
-		<div class="container d-none d-md-block">
+		<div class="container d-none d-lg-block">
 			<div class="row">
-				<div class="col-12 col-md-3 col-lg-2 col-xl-3">
-					<a href="<?php echo get_home_url(); ?>">
-						<img src="<?php bloginfo('template_url'); ?>/assets/images/logoRefill.svg">
+				<div class="col-12 col-md-3 col-lg-4">
+					<a href="<?php echo get_home_url(); ?>" class="headerTitle"> 
+						Napoleão Bernardes
 					</a>
 				</div>
-				<div class="col-12 col-md-9 col-lg-10 col-xl-9 headerMenu">
-					<a class="menuItem" href="<?php echo get_home_url(); ?>">home</a>
-					<a class="menuItem" href="/quienes-somos">quiénes somos</a>
-					<a class="menuItem" href="#horarios">horarios</a>
-					<a class="menuItem" href="<?php the_field('arquivo_menu', 5); ?>" target="_blank">menú</a>
-					<a class="menuItem" href="/blog">blog</a>
-					<a class="menuItem" href="/contacto">contacto</a>
-
-					<a href="https://api.whatsapp.com/send?phone=<?php the_field('numero_whatsapp', 5); ?>&text=Bien+venidos+a+Refill" target="_blank" class="btnHeaderZap d-none d-lg-flex">
-						<img src="<?php bloginfo('template_url'); ?>/assets/images/logoZap.svg">
-						haga su pedido
-					</a>
-					<a href="https://api.whatsapp.com/send?phone=<?php the_field('numero_whatsapp', 5); ?>&text=Bien+venidos+a+Refill"  target="_blank" class="btnHeaderZap d-flex d-lg-none">
-						<img src="<?php bloginfo('template_url'); ?>/assets/images/logoZap.svg">
-						
-					</a>
-					<a href="<?php the_field('link_facebook', 5); ?>" target="_blank" class="socialLinkHeader d-none d-lg-flex">
-						<img src="<?php bloginfo('template_url'); ?>/assets/images/logoFb.svg">
-					</a>
-					<a href="<?php the_field('link_instagram', 5); ?>" target="_blank" class="socialLinkHeader d-none d-lg-flex">
-						<img src="<?php bloginfo('template_url'); ?>/assets/images/logoIg.svg">
-					</a>
+				<div class="col-12 col-md-9 col-lg-8  headerMenu">
+					<?php
+                        $defaults = array(
+                        'theme_location'  => 'primary',
+                        'container'       => false,
+                        'menu_class'      => 'list-inline list-unstyled box-menu-header',
+                        'menu_id'         => 'menu',
+                        'echo'            => true
+                        );
+                        wp_nav_menu($defaults);
+                    ?>	
+                    <a class="btnNapoleao" href="/contato">contato</a>
 				</div>
 			</div>
 		</div>
-		<div class="container d-md-none">
+		<div class="container d-lg-none">
 			<div class="row">
-				<div class="col-4 offset-4 headerMenu">
-					<a href="<?php echo get_home_url(); ?>">
-						<img class="siteLogo" src="<?php bloginfo('template_url'); ?>/assets/images/logoRefill.svg">
+				<div class="col-9 headerMenu">
+										
+					<a href="<?php echo get_home_url(); ?>" class="headerTitle"> 
+						Napoleão Bernardes
 					</a>
 				</div>
-				<div class="col-4 text-right">
-				<a class="headerBtnMobile" data-toggle="collapse" href="#collapseMenu" role="button" aria-expanded="false" aria-controls="collapseMenu">
-					<svg class="ham hamRotate ham4" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
-					  <path class="line top" d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
-					  <path class="line middle" d="m 70,50 h -40" />
-					  <path class="line bottom" d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
-					</svg>
-				</a>
+				<div class="col-3 text-right btnHeaderMenu">
+					<a class="headerBtnMobile" data-toggle="collapse" href="#collapseMenu" role="button" aria-expanded="false" aria-controls="collapseMenu">
+						<input type="checkbox" />
+					    
+					    <span></span>
+					    <span></span>
+					    <span></span>
+					</a>
 					  
 				</div>
-				<div class="col-12">
-					<div class="collapse text-center menuMobile" id="collapseMenu">
-						<ul>
-							<li>
-								<a href="<?php echo get_home_url(); ?>">home</a>
-							</li>
-							<li>
-								<a href="/quienes-somos">quiénes somos</a>
-							</li>
-							<li>
-								<a href="#horarios">horarios</a>
-							</li>
-							<li>
-								<a href="<?php the_field('arquivo_menu', 5); ?>">menú</a>
-							</li>
-							<li>
-								<a href="/blog">blog</a>
-							</li>
-							<li>
-								<a href="/contacto">contacto</a>
-							</li>
-						</ul>
-						<a href="https://api.whatsapp.com/send?phone=<?php the_field('numero_whatsapp', 5); ?>&text=Bien+venidos+a+Refill" target="_blank" class="btnHeaderZap">
-							<img src="<?php bloginfo('template_url'); ?>/assets/images/logoZap.svg">
-							haga su pedido
-						</a>
-						<a href="<?php the_field('link_facebook', 5); ?>" class="socialLinkHeader">
-							<img src="<?php bloginfo('template_url'); ?>/assets/images/logoFb.svg">
-						</a>
-						<a href="<?php the_field('link_instagram', 5); ?>" class="socialLinkHeader">
-							<img src="<?php bloginfo('template_url'); ?>/assets/images/logoIg.svg">
-						</a>
+				<div class="col-12 menuMobile">
+					<div class="collapse text-center" id="collapseMenu">
+						<?php
+	                        $defaults = array(
+	                        'theme_location'  => 'primary',
+	                        'container'       => false,
+	                        'menu_class'      => 'list-inline list-unstyled box-menu-header',
+	                        'menu_id'         => 'menu',
+	                        'echo'            => true
+	                        );
+	                        wp_nav_menu($defaults);
+	                    ?>	
+                    	<a class="btnNapoleao" href="/contato">contato</a>
+						
 					</div>
 				</div>
 			

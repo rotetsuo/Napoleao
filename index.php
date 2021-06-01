@@ -17,37 +17,197 @@
 
 get_header();
 ?>
-		<section class="bodyBlog">
+		
+		<section class="topoBlog">
+			<?php
+ 				$args = array(
+				    'post_type' => 'post',
+				  	'posts_per_page' => 3
+				);
+				// The Query
+				$the_query = new WP_Query( $args );
+				 
+				// The Loop
+				if ( $the_query->have_posts() ) {
+				    
+				    while ( $the_query->have_posts() ) {
+				        $the_query->the_post();
+				        $imagemDestaque = wp_get_attachment_url( get_post_thumbnail_id());
+				        $excerpt = get_the_excerpt(); 
+						$excerpt = substr( $excerpt, 0, 260 ); 
+			?>
+				<a href="<?php the_permalink(); ?>">
+			<div class="bannerNoticia" style="background-image: url('<?php echo $imagemDestaque; ?>')">
+					<div class="sombreado"></div>
+					<div class="container">
+						<div class="row">
+							<div class="col-12 col-md-10">
+								<h2><?php the_title(); ?></h2>
+								<p><?php echo $excerpt; ?></p>
+							</div>
+						</div>
+					</div>
+			</div>
+				</a>
+			<?php
+				    }
+				} else {
+				    // no posts found
+				}
+				/* Restore original Post Data */
+				wp_reset_postdata();
+				?>
+				
+		</section>
+		<div class="container-fluid">
+			<div class="row action">
+				<div class="col-4" style="background-color: #013A81;">
+				    <a href="#" data-slide="0"></a>
+				</div>
+				<div class="col-4">
+				    <a href="#" data-slide="1"></a>
+				</div>
+				<div class="col-4">			
+				    <a href="#" data-slide="2"></a>
+				</div>
+			</div>
+ 	 	</div>
+		<section class="titleBannerNoticia d-none d-md-block">
 			<div class="container">
 				<div class="row">
-					<div class="col-12">
-						<h1>Nuestro Blog</h1>
+					<?php
+						$args = array(
+						    'post_type' => 'post',
+						  	'posts_per_page' => 3
+						);
+						// The Query
+						$the_query = new WP_Query( $args );
+						 
+						// The Loop
+						if ( $the_query->have_posts() ) {
+						    
+						    while ( $the_query->have_posts() ) {
+						        $the_query->the_post();
+						        $imagemDestaque = wp_get_attachment_url( get_post_thumbnail_id());
+						        $excerpt = get_the_excerpt(); 
+								$excerpt = substr( $excerpt, 0, 260 );
+					?>
+					<div class="col-12 col-md-4">
+						<a href="<?php the_permalink(); ?>">
+							<h2><?php the_title(); ?></h2>
+							<p><?php echo $excerpt; ?></p>
+						</a>
 					</div>
 					<?php
-						if ( have_posts() ) :
-						    while ( have_posts() ) : the_post();
-						    	if(has_post_thumbnail()) {
-									$imagemDestaque = wp_get_attachment_url( get_post_thumbnail_id());
-								} else {
-									$imagemDestaque = get_template_directory_uri()."/assets/images/imgPadrao.jpg";
-								}
-					?>
-						<div class="col-12 col-sm-6 col-lg-4 singlePost">
-							<a href="<?php the_permalink(); ?>">
-								<img src="<?php echo $imagemDestaque; ?>">
-								<h2><?php the_title(); ?></h2>
-								<p class="normalTag"><?php echo get_the_date('d/m/y'); ?></p>
-							</a>
-						</div>
-					<?php
-						    endwhile;
-						else :
-						    _e( 'Sorry, no posts were found.', 'textdomain' );
-						endif;
-					?>
+						    }
+						} else {
+						    // no posts found
+						}
+						/* Restore original Post Data */
+						wp_reset_postdata();
+						?>
+					<div class="col-12 bottomLine">
+					</div>
 				</div>
 			</div>
 		</section>
+		<section class="bodyBlog">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-md-7 col-lg-8">
+						<h3>ÚLTIMAS NOTÍCIAS</h3>
+						<?php
+						$args = array(
+						    'post_type' => 'post',
+						  	'posts_per_page' => -1
+						);
+						// The Query
+						$the_query = new WP_Query( $args );
+						 
+						// The Loop
+						if ( $the_query->have_posts() ) {
+						    $contador = 0;
+						    while ( $the_query->have_posts() ) {
+						        $the_query->the_post();
+						        $imagemDestaque = wp_get_attachment_url( get_post_thumbnail_id());
+							if($contador < 3){
+								$contador++;
+							}else{
+								$excerpt = get_the_excerpt(); 
+								$excerpt = substr( $excerpt, 0, 260 );
+
+					?>			
+						<a href="<?php the_permalink(); ?>" class="eachBlogPost">
+							<div class="blogPostInfo">
+								<h4><?php the_title(); ?></h4>
+								<img class="d-block d-lg-none" src="<?php echo $imagemDestaque; ?>">
+								<p><?php echo $excerpt; ?></p>
+							</div>
+							<img class="d-none d-lg-block"  src="<?php echo $imagemDestaque; ?>">
+						</a>
+					<?php
+							}
+						    }
+						} else {
+						    // no posts found
+						}
+						/* Restore original Post Data */
+						wp_reset_postdata();
+						?>
+					</div>
+					<div class="col-12 col-md-5 col-lg-4">
+						<h3>mais lidas</h3>
+						
+						<?php
+					        global $post;
+					        $args = array(
+					        	'order'	=> 'DESC',
+					        	'suppress_filters' => false,
+					        	'posts_per_page' => 3,
+					        	'orderby' => 'post_views'
+					        );
+					        $most_viewed = get_posts( $args );
+					        foreach( $most_viewed as $post ){ setup_postdata($post);
+						?>
+						
+						<a href="<?php the_permalink(); ?>" class="eachBlogPost">
+							<h5><?php the_title(); ?></h5>
+						</a>
+						
+						
+						<?php }
+					    wp_reset_postdata();
+					    ?>
+					
+					</div>
+				</div>
+			</div>
+		</section>
+		<script type="text/javascript">
+			
+			$(document).ready(function(){
+				$('.topoBlog').slick({
+					infinite: true,
+					dots: false,
+					arrows: false,
+					responsive: [
+				    {
+				      breakpoint: 576,
+				      settings: {
+				        dots: true
+				      }
+				    }
+				  ]
+				});
+				 $('.action .col-4').click(function(e) {
+					$('.action .col-4').css('background-color', '#A5A5A5');
+					$(this).css('background-color', '#013A81');
+			   		e.preventDefault();
+			   		var slideno = $(this).find('a').data('slide');
+			   		$('.topoBlog').slick('slickGoTo', slideno);
+				 });
+			});
+		</script>
 
 <?php
 get_footer();
