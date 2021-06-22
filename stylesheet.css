@@ -774,12 +774,12 @@ p{
 /*	Page Contato	*/
 
 .bodyContato{
-	padding: 120px 0;
+	padding: 190px 0;
 }
 .bodyContato .talkToMe{
 	background: #E5E5E5;
 	display: flex;
-	align-items: center;
+  flex-direction: column;
 }
 .bodyContato h1{
 	font-family: "Bree";
@@ -808,6 +808,28 @@ p{
 	height: 280px;
 	background-position: center;
 	background-size: cover;
+}
+
+/* 404 */
+
+.body404{
+	padding: 295px 0;
+}
+.body404 h1{
+	font-family: "Bree";
+	font-style: normal;
+	font-weight: bold;
+	font-size: 48px;
+	line-height: 63px;
+	letter-spacing: 0.01em;
+	font-feature-settings: 'liga' off;
+	color: #065AA2;
+}
+.body404 .sublinhado{
+		width: 67%;
+    background: #065AA2;
+    display: inherit;
+    margin: 0 auto;
 }
 
 /*---------------------------------------------------

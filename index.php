@@ -61,13 +61,13 @@ get_header();
 		</section>
 		<div class="container-fluid">
 			<div class="row action">
-				<div class="col-4" style="background-color: #013A81;">
+				<div id="slick01" class="col-4" style="background-color: #013A81;">
 				    <a href="#" data-slide="0"></a>
 				</div>
-				<div class="col-4">
+				<div id="slick02" class="col-4">
 				    <a href="#" data-slide="1"></a>
 				</div>
-				<div class="col-4">			
+				<div id="slick03" class="col-4">			
 				    <a href="#" data-slide="2"></a>
 				</div>
 			</div>
@@ -190,6 +190,8 @@ get_header();
 					infinite: true,
 					dots: false,
 					arrows: false,
+					autoplay: true,
+  					autoplaySpeed: 2000,
 					responsive: [
 				    {
 				      breakpoint: 576,
@@ -206,6 +208,19 @@ get_header();
 			   		var slideno = $(this).find('a').data('slide');
 			   		$('.topoBlog').slick('slickGoTo', slideno);
 				 });
+			 	$('.topoBlog').on('afterChange', function(event, slick, currentSlide, nextSlide){
+					var currentSlick = $(".slick-current").data('slick-index');
+					if(currentSlick == 0){
+						$('.action .col-4').css('background-color', '#A5A5A5');
+						$('#slick01').css('background-color', '#013A81');
+					}else if(currentSlick == 1){
+						$('.action .col-4').css('background-color', '#A5A5A5');
+						$('#slick02').css('background-color', '#013A81');
+					}else{
+						$('.action .col-4').css('background-color', '#A5A5A5');
+						$('#slick03').css('background-color', '#013A81');
+					}
+				});
 			});
 		</script>
 
