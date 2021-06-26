@@ -28,6 +28,7 @@ src:url("https://use.typekit.net/af/e7f55d/00000000000000007735953f/30/l?primer=
 font-display:auto;font-style:normal;font-weight:600;
 }
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 html {
   scroll-behavior: smooth!important;
@@ -770,7 +771,28 @@ p{
 	height: 12px;
 	display: block;
 }
+.morePosts{
+	background: transparent!important;
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 42px;
+	text-decoration-line: underline;
+	text-transform: uppercase;
+	color: #013A81!important;
+	outline: none!important;
+	border: none!important;
+}
+.morePosts:focus{
+	outline: none!important;
+	border: none!important;
 
+}
+.loaderBlog{
+	height: 125px;
+	width: 125px;
+}
 /*	Page Contato	*/
 
 .bodyContato{
@@ -1090,6 +1112,9 @@ p{
   .action{
   	display: none;
   }
+  .morePosts{
+  	font-size: 26px;
+  }
 
 
 }
@@ -1128,6 +1153,12 @@ p{
 	.bannerBlog{
 		height: 175px;
 	}
+
+	/*Blog	*/
+
+	.morePosts{
+  	font-size: 22px;
+  }
 
 }
 

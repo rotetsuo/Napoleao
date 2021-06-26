@@ -632,3 +632,59 @@ function register_my_menu() {
   register_nav_menu( 'primary', __( 'Primary Menu', 'twentytwentyone' ) );
 }
 add_action( 'after_setup_theme', 'register_my_menu' );
+
+
+// Ver mais
+//----------------------------------------//
+
+
+add_action('wp_ajax_verMaisBlog_by_ajax', 'verMaisBlog_by_ajax');
+add_action('wp_ajax_nopriv_verMaisBlog_by_ajax', 'verMaisBlog_by_ajax');
+
+function verMaisBlog_by_ajax(){
+
+    $page_num = $_POST['pagina_atual'];
+    $por_per_page = get_option('posts_per_page');
+    $offset = (intval($por_per_page)*intval($page_num));
+
+    $taxquery = array();
+    $argsBlog = array(
+      'post_type' => 'post',
+      'order' => 'DESC',
+      'posts_per_page' => $por_per_page, 
+      'post_status' => array( 'publish' ),
+      'hide_empty' => 0,
+      'offset' => $offset,
+  );
+
+      $query = new WP_Query($argsBlog);
+
+    if ($query->have_posts()) :
+      while($query->have_posts()): $query->the_post(); 
+
+        if(has_post_thumbnail()) {
+          $imagemDestaque = wp_get_attachment_url( get_post_thumbnail_id());
+        } else {
+         $imagemDestaque = get_template_directory_uri()."/img/maiscode-blog.jpg";
+        }
+        ?>
+
+           
+        <a href="<?php the_permalink(); ?>" class="eachBlogPost">
+			<div class="blogPostInfo">
+				<h4><?php the_title(); ?></h4>
+				<img class="d-block d-lg-none" src="<?php echo $imagemDestaque; ?>">
+				<p><?php echo $excerpt; ?></p>
+			</div>
+			<img class="d-none d-lg-block"  src="<?php echo $imagemDestaque; ?>">
+		</a>
+
+      <?php endwhile;  
+    endif; 
+
+  wp_reset_postdata();
+
+  wp_die();
+
+
+}

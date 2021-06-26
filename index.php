@@ -114,27 +114,28 @@ get_header();
 		<section class="bodyBlog">
 			<div class="container">
 				<div class="row">
-					<div class="col-12 col-md-7 col-lg-8">
+					<div class="col-12 col-md-7 col-lg-8 otherPosts">
 						<h3>ÚLTIMAS NOTÍCIAS</h3>
 						<?php
-						$args = array(
-						    'post_type' => 'post',
-						  	'posts_per_page' => -1
-						);
-						// The Query
-						$the_query = new WP_Query( $args );
+							$args = array(
+							    'post_type' => 'post',
+							  	'posts_per_page' => -1
+							);
+							// The Query
+							$the_query = new WP_Query( $args );
 						 
-						// The Loop
-						if ( $the_query->have_posts() ) {
-						    $contador = 0;
-						    while ( $the_query->have_posts() ) {
-						        $the_query->the_post();
-						        $imagemDestaque = wp_get_attachment_url( get_post_thumbnail_id());
-							if($contador < 3){
-								$contador++;
-							}else{
-								$excerpt = get_the_excerpt(); 
-								$excerpt = substr( $excerpt, 0, 260 );
+							// The Loop
+							if ( $the_query->have_posts() ) {
+						    	$contador = 0;
+						    	while ( $the_query->have_posts() ) {
+							        $the_query->the_post();
+							        $imagemDestaque = wp_get_attachment_url( get_post_thumbnail_id());
+									if($contador < 3){
+										$contador++;
+									}else if($contador < 6){
+										$contador++;
+										$excerpt = get_the_excerpt(); 
+										$excerpt = substr( $excerpt, 0, 260 );
 
 					?>			
 						<a href="<?php the_permalink(); ?>" class="eachBlogPost">
@@ -146,7 +147,9 @@ get_header();
 							<img class="d-none d-lg-block"  src="<?php echo $imagemDestaque; ?>">
 						</a>
 					<?php
-							}
+								}else{
+									break;
+								}
 						    }
 						} else {
 						    // no posts found
@@ -154,6 +157,12 @@ get_header();
 						/* Restore original Post Data */
 						wp_reset_postdata();
 						?>
+					</div>
+					<div class="col-12 text-center d-block d-md-none">
+						<button class="morePosts">
+							Carregar mais posts
+						</button>
+						<img class="loaderBlog" src="<?php bloginfo('template_url'); ?>/assets/images/loader.gif">
 					</div>
 					<div class="col-12 col-md-5 col-lg-4">
 						<h3>mais lidas</h3>
@@ -179,6 +188,12 @@ get_header();
 					    wp_reset_postdata();
 					    ?>
 					
+					</div>
+					<div class="col-12 text-center d-none d-md-block">
+						<button class="morePosts">
+							Carregar mais posts
+						</button>
+						<img class="loaderBlog" src="<?php bloginfo('template_url'); ?>/assets/images/loader.gif">
 					</div>
 				</div>
 			</div>
@@ -221,6 +236,69 @@ get_header();
 						$('#slick03').css('background-color', '#013A81');
 					}
 				});
+
+			 	/*	Loader	*/
+
+			 	escondeLoader();
+				escondeMensagemFimDePosts();
+				$(".morePosts").click(function(){
+					escondeBotao();			
+					mostraLoader();
+					maisPostsAjax();
+					escondeMensagemFimDePosts()
+				}); 
+				var ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
+				var page = 1;
+				function maisPostsAjax(){
+					var data = {
+						'action': 'verMaisBlog_by_ajax',
+						'pagina_atual': page
+					};
+					setTimeout(function(){
+						$.ajax({
+							type: "POST",
+							url: ajaxurl,
+							data: data,
+							success: function(response){
+
+								if(response != '') {
+									escondeLoader();
+									mostraPostsFiltrados(response);
+									mostraBotao();
+									page++;
+									controleView = false;
+								} else {
+									escondeLoader();
+									mensagemFimDePosts();
+									controleView = "finaliza";
+								}
+				  			}
+						});
+					}, 100);
+				}
+				function escondeBotao(){
+					$('.morePosts').hide();
+				}
+				function mostraBotao(){
+					$('.morePosts').show();
+				}
+				function escondeLoader(){
+					$('.loaderBlog').hide();
+				}
+				function mostraLoader(){
+					$('.loaderBlog').show();
+				}
+				function mostraPostsFiltrados(response){
+					$('.otherPosts').append(response);
+				}
+				function mensagemFimDePosts(){
+					$('#mensagemErro').show();
+				}
+				function escondeMensagemFimDePosts(){
+					$('#mensagemErro').hide();
+				}
+
+
 			});
 		</script>
 
